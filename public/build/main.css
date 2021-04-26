@@ -158,6 +158,26 @@ body {
   margin-top: 1.625rem;
 }
 
+.main-navigation .navigation {
+  padding: 1rem;
+  background-color: #7258E9;
+  max-width: 18.75rem;
+}
+.main-navigation .navigation .headline {
+  margin-bottom: 0.625rem;
+}
+.main-navigation .navigation div > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-navigation .navigation div > ul li {
+  margin: 0;
+}
+.main-navigation .navigation div > ul li::before {
+  content: none;
+}
+
 .page-header {
   padding: 1rem;
   background-color: #7258E9;

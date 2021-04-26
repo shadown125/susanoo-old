@@ -1,0 +1,24 @@
+@use '../susanoo-functions' as susanoo;
+@use '../reset-list' as list;
+
+.main-navigation {
+    .navigation {
+        padding: susanoo.rem-calc(16);
+        background: {
+            color: #7258E9;
+        }
+        max: {
+            width: susanoo.rem-calc(300);
+        }
+        .headline {
+            margin: {
+                bottom: susanoo.rem-calc(10);
+            }
+        }
+        div {
+            > ul {
+                @include list.reset-list();
+            }
+        }
+    }
+}
