@@ -50,3 +50,28 @@
         background-color: variables.$after-background-color;
     }
 }
+
+.button-header {
+    cursor: pointer;
+    display: inline-block;
+    width: susanoo.rem-calc(45);
+    height: susanoo.rem-calc(45);
+    background: {
+        color: variables.$button-header-background-color;
+    }
+    border: {
+        radius: susanoo.rem-calc(200);
+        style: none;
+        width: unset;
+    }
+    transition: background-color 0.2s linear;
+    &:hover {
+        background: {
+            color: variables.$button-header-hover-background-color;
+        }
+    }
+    &:active,
+    &:focus {
+        outline: none;
+    }
+}

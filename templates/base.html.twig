@@ -21,13 +21,9 @@
     <script src="{{ asset('build/main.js') }}" defer></script>
 </head>
 <body>
-    <header class="page-header">
-
-    </header>
+    {% block header %}{% endblock %}
     <main>
         {% block main %}{% endblock %}
     </main>
-    <footer class="page-footer">
-
-    </footer>
+    {% block footer %}{% endblock %}
 </body>

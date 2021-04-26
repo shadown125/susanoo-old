@@ -37,6 +37,24 @@
   background-color: #ff6767;
 }
 
+.button-header {
+  cursor: pointer;
+  display: inline-block;
+  width: 2.8125rem;
+  height: 2.8125rem;
+  background-color: #454D66;
+  border-radius: 12.5rem;
+  border-style: none;
+  border-width: unset;
+  transition: background-color 0.2s linear;
+}
+.button-header:hover {
+  background-color: #667EEA;
+}
+.button-header:active, .button-header:focus {
+  outline: none;
+}
+
 html,
 * {
   font-family: open-sans, "helvetica";
@@ -58,6 +76,11 @@ body {
 
 .wrapper {
   max-width: 90rem;
+  margin: 0 auto;
+}
+
+.wrapper-sus {
+  max-width: 152.5rem;
   margin: 0 auto;
 }
 
@@ -133,4 +156,32 @@ body {
 .login .panel .button {
   margin: 0 auto;
   margin-top: 1.625rem;
+}
+
+.page-header {
+  padding: 1rem;
+  background-color: #7258E9;
+}
+.page-header .navigation {
+  display: flex;
+  justify-content: space-between;
+}
+.page-header .navigation ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 1.25rem;
+}
+.page-header .navigation ul li {
+  margin: 0;
+}
+.page-header .navigation ul li::before {
+  content: none;
+}
+.page-header .navigation li .button-header {
+  margin: 0 1rem;
+}
+.page-header .navigation li span {
+  display: none;
 }

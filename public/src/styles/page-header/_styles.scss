@@ -1,0 +1,29 @@
+@use '../susanoo-functions' as susanoo;
+@use 'variables' as variables;
+@use '../reset-list' as list;
+
+.page-header {
+    padding: susanoo.rem-calc(16);
+    background: {
+        color: variables.$page-header-background-color;
+    }
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        ul {
+            display: flex;
+            @include list.reset-list();
+            margin: {
+                left: susanoo.rem-calc(20);
+            }
+        }
+        li {
+            .button-header {
+                margin: 0 susanoo.rem-calc(16);
+            }
+            span {
+                display: none;
+            }
+        }
+    }
+}

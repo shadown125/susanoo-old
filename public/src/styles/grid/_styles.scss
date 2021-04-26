@@ -15,7 +15,6 @@ html,
     margin: 0;
     padding: 0;
 }
-
 body {
     font: {
         size: 87.5%;
@@ -26,10 +25,15 @@ body {
         }
     }
 }
-
 .wrapper {
     max: {
         width: susanoo.rem-calc(1440);
+    }
+    margin: 0 auto;
+}
+.wrapper-sus {
+    max: {
+        width: susanoo.rem-calc(2440);
     }
     margin: 0 auto;
 }
