@@ -1,0 +1,50 @@
+html,
+* {
+  font-family: open-sans, "helvetica";
+  font-weight: 400;
+  line-height: 1.5rem;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 87.5%;
+}
+@media only screen and (min-width: 40em) {
+  body {
+    font-size: 100%;
+  }
+}
+
+.wrapper {
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.login {
+  background-color: #17213A;
+}
+.login .container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login .panel {
+  padding: 1.625rem;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+}
+.login .panel .headline {
+  color: white;
+  margin-bottom: 1rem;
+}
+.login .panel div {
+  display: flex;
+  flex-direction: column;
+}
+.login .panel div:not(:last-child) {
+  margin-bottom: 0.625rem;
+}

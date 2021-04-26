@@ -1,0 +1,39 @@
+@use '../susanoo-functions' as susanoo;
+@use 'variables';
+
+.login {
+    background: {
+        color: variables.$login-background-color;
+    }
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .panel {
+        padding: susanoo.rem-calc(26);
+        border: {
+            style: solid;
+            color: black;
+            width: 2px;
+        }
+        .headline {
+            color: variables.$title-color;
+            margin: {
+                bottom: susanoo.rem-calc(16);
+            }
+        }
+        div {
+            display: flex;
+            flex: {
+                direction: column;
+            }
+            &:not(:last-child) {
+                margin: {
+                    bottom: susanoo.rem-calc(10);
+                }
+            }
+        }
+    }
+}

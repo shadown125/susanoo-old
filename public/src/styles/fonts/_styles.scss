@@ -1,0 +1,22 @@
+@font-face {
+    font: {
+        family: "open-sans";
+        style: normal;
+        weight: 400;
+    }
+    src:
+            url("open-sans-v18-latin-regular.woff"),
+            url("open-sans-v18-latin-regular.woff2");
+}
+
+@font-face {
+    font: {
+        family: "icomoon";
+        weight: normal;
+        style: normal;
+        display: block;
+    }
+    src:
+            url("icomoon.woff?9xu6g5") format("woff"),
+            url("icomoon.svg?9xu6g5#icomoon") format("svg");
+}

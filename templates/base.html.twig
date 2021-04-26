@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta property="og:title" content="Susanoo" >
+    <meta property="og:type" content="website" >
+    <meta property="og:description" content="You entried to the Susanoo" >
+    <meta property="og:locale" content="pl_PL" >
+    <meta property="og:locale:alternate" content="en_GB" >
+
+    <title>{% block title %}Susanoo{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ asset('build/main.css') }}">
+
+    <script src="{{ asset('build/runtime.js') }}" defer></script>
+    <script src="{{ asset('build/vendor.js') }}" defer></script>
+    <script src="{{ asset('build/main.js') }}" defer></script>
+</head>
+<body>
+    <header class="page-header">
+
+    </header>
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+    <footer class="page-footer">
+
+    </footer>
+</body>
