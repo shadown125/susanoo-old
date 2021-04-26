@@ -1,0 +1,52 @@
+@use '../susanoo-functions' as susanoo;
+@use 'variables' as variables;
+
+.button {
+    display: block;
+    position: relative;
+    font: {
+        size: susanoo.rem-calc(16);
+    }
+    text: {
+        transform: uppercase;
+    }
+    border: {
+        style: none;
+        radius: susanoo.rem-calc(100);
+    }
+    padding: susanoo.rem-calc(12) susanoo.rem-calc(50);
+    transition: transform 0.2s, opacity 0.2s;
+    cursor: pointer;
+    color: variables.$color;
+    background: {
+        color: variables.$background-color;
+    }
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 susanoo.rem-calc(16) susanoo.rem-calc(32) rgba(black, 0.2);
+        &::after {
+            transform: scale(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    &:active,
+    &:focus {
+        transform: translateY(-1px);
+        box-shadow: 0 susanoo.rem-calc(8) susanoo.rem-calc(16) rgba(black, 0.2);
+    }
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border: {
+            radius: susanoo.rem-calc(100);
+        }
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: transform 0.4s, opacity 0.4s;
+        background-color: variables.$after-background-color;
+    }
+}

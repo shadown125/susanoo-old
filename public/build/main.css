@@ -1,3 +1,42 @@
+.button {
+  display: block;
+  position: relative;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-style: none;
+  border-radius: 6.25rem;
+  padding: 0.75rem 3.125rem;
+  transition: transform 0.2s, opacity 0.2s;
+  cursor: pointer;
+  color: white;
+  background-color: #ff6767;
+}
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.button:hover::after {
+  transform: scale(1.4) scaleY(1.6);
+  opacity: 0;
+}
+.button:active, .button:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.button::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 6.25rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: transform 0.4s, opacity 0.4s;
+  background-color: #ff6767;
+}
+
 html,
 * {
   font-family: open-sans, "helvetica";
@@ -22,8 +61,36 @@ body {
   margin: 0 auto;
 }
 
+.input {
+  color: #d4d6db;
+  font-size: 1.125rem;
+  background-color: #4C5C8A;
+  border-color: unset;
+  border-style: none;
+  border-width: unset;
+  border-radius: 0.375rem;
+  padding: 0.4375rem 1.25rem;
+  transition: background-color 0.2s ease-in-out;
+}
+.input:-ms-input-placeholder {
+  color: white;
+}
+.input::placeholder {
+  color: white;
+}
+.input:focus {
+  outline: none;
+  background-color: #8494AC;
+}
+.input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+.input:focus::placeholder {
+  color: transparent;
+}
+
 .login {
-  background-color: #17213A;
+  background-color: #2D2C3C;
 }
 .login .container {
   height: 100vh;
@@ -32,19 +99,38 @@ body {
   align-items: center;
 }
 .login .panel {
-  padding: 1.625rem;
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
+  min-width: 28.125rem;
+  border-radius: 0.9375rem;
+  background-color: #282639;
 }
 .login .panel .headline {
   color: white;
+  padding-top: 2.125rem;
+  padding-right: 2.5rem;
+  padding-bottom: 1.25rem;
+  padding-left: 2.5rem;
+  text-align: center;
+  border-top-left-radius: 0.9375rem;
+  border-top-right-radius: 0.9375rem;
+  background-color: #ff6767;
   margin-bottom: 1rem;
+}
+.login .panel .form {
+  padding-top: 0;
+  padding-right: 2.5rem;
+  padding-bottom: 1.875rem;
+  padding-left: 2.5rem;
+}
+.login .panel .form label {
+  color: white;
+  margin-bottom: 0.625rem;
 }
 .login .panel div {
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
 }
-.login .panel div:not(:last-child) {
-  margin-bottom: 0.625rem;
+.login .panel .button {
+  margin: 0 auto;
+  margin-top: 1.625rem;
 }

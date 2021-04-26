@@ -1,0 +1,32 @@
+@use '../susanoo-functions' as susanoo;
+@use 'variables' as variables;
+
+.input {
+    color: variables.$color;
+    font: {
+        size: susanoo.rem-calc(18);
+    }
+    background: {
+        color: variables.$background-color;
+    }
+    border: {
+        color: unset;
+        style: none;
+        width: unset;
+        radius: susanoo.rem-calc(6);
+    }
+    padding: susanoo.rem-calc(7) susanoo.rem-calc(20);
+    transition: background-color 0.2s ease-in-out;
+    &::placeholder {
+        color: variables.$placeholder-color;
+    }
+    &:focus {
+        outline: none;
+        background: {
+            color: variables.$focus-background-color;
+        }
+    }
+    &:focus::placeholder {
+        color: transparent;
+    }
+}
