@@ -1,0 +1,39 @@
+@use '../susanoo-functions' as susanoo;
+@use 'variables' as variables;
+
+.dashboard {
+    display: flex;
+    .users-online {
+        //test
+        margin: {
+            right: susanoo.rem-calc(30);
+        }
+        min: {
+            width: susanoo.rem-calc(500);
+        }
+        // s
+        .online {
+            position: relative;
+            padding: {
+                left: susanoo.rem-calc(20);
+            }
+            &::before {
+                content: "";
+                height: susanoo.rem-calc(10);
+                width: susanoo.rem-calc(10);
+                position: absolute;
+                top: susanoo.rem-calc(5);
+                left: 0;
+                background: {
+                    color: variables.$online-before-background-color;
+                }
+                border: {
+                    radius: susanoo.rem-calc(200);
+                }
+            }
+        }
+        .percent {
+
+        }
+    }
+}

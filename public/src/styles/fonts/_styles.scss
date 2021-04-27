@@ -11,6 +11,17 @@
 
 @font-face {
     font: {
+        family: "open-sans";
+        style: normal;
+        weight: 600;
+    }
+    src:
+            url("open-sans-v18-latin-600.woff"),
+            url("open-sans-v18-latin-600.woff2");
+}
+
+@font-face {
+    font: {
         family: "icomoon";
         weight: normal;
         style: normal;

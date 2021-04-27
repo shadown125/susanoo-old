@@ -1,0 +1,37 @@
+@use '../susanoo-functions' as susanoo;
+@use 'variables' as variables;
+
+.box-header {
+    padding: susanoo.rem-calc(32);
+    background: {
+        color: variables.$background-color;
+    }
+    border: {
+        radius: susanoo.rem-calc(4);
+    }
+    color: variables.$color;
+    .headline {
+        margin: {
+            bottom: susanoo.rem-calc(20);
+        }
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        font: {
+            size: susanoo.rem-calc(20);
+        }
+    }
+    .amount {
+        color: variables.$amount;
+        font: {
+            size: susanoo.rem-calc(24);
+            weight: 600;
+        }
+    }
+    .percent {
+        font: {
+            size: susanoo.rem-calc(16);
+        }
+    }
+}

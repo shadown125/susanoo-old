@@ -1,0 +1,25 @@
+@use '../susanoo-functions' as susanoo;
+@use 'variables' as variables;
+
+a {
+    display: block;
+    text: {
+        decoration: none;
+    }
+    color: variables.$color;
+    padding: susanoo.rem-calc(6);
+    transition: color .2s ease-in-out, background-color .2s ease-in-out;
+    &:hover {
+        color: variables.$hover-color;
+    }
+    &.disabled {
+        pointer-events: none;
+        background: {
+            color: variables.$disabled-color;
+        }
+        opacity: 0.4;
+        &:hover {
+            color: variables.$disabled-hover-color;
+        }
+    }
+}

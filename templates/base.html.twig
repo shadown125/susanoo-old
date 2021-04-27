@@ -21,7 +21,40 @@
     <script src="{{ asset('build/main.js') }}" defer></script>
 </head>
 <body>
-    {% block header %}{% endblock %}
+    {% block header %}
+        <header class="page-header">
+            <div class="wrapper-sus">
+                <nav class="navigation">
+                    <form class="search-form">
+                        <label for="search"></label>
+                        <input type="search" class="input" id="search">
+                    </form>
+                    <ul>
+                        <li>
+                            <button class="button-header"></button>
+                            <span>notifications</span>
+                        </li>
+                        <li>
+                            <button class="button-header"></button>
+                            <span>language</span>
+                        </li>
+                        <li>
+                            <button class="button-header"></button>
+                            <span>user activity</span>
+                        </li>
+                        <li>
+                            <button class="button-header"></button>
+                            <span>profile</span>
+                        </li>
+                        <li>
+                            <button class="button-header"></button>
+                            <span>settings</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    {% endblock %}
     <main>
         {% block main %}{% endblock %}
     </main>

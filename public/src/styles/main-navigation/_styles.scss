@@ -1,16 +1,23 @@
 @use '../susanoo-functions' as susanoo;
 @use '../reset-list' as list;
+@use 'variables' as variables;
+
+.main-navigation-container {
+    background: {
+        color: variables.$navigation-background-color;
+    }
+}
 
 .main-navigation {
     .navigation {
-        padding: susanoo.rem-calc(16);
-        background: {
-            color: #7258E9;
-        }
-        max: {
-            width: susanoo.rem-calc(300);
+        padding: {
+            top: susanoo.rem-calc(16);
+            right: susanoo.rem-calc(32);
+            bottom: susanoo.rem-calc(16);
+            left: susanoo.rem-calc(16);
         }
         .headline {
+            color: variables.$headline-color;
             margin: {
                 bottom: susanoo.rem-calc(10);
             }
@@ -18,6 +25,32 @@
         div {
             > ul {
                 @include list.reset-list();
+                margin: {
+                    bottom: susanoo.rem-calc(10);
+                }
+            }
+        }
+        a {
+            padding: {
+                left: susanoo.rem-calc(32);
+            }
+            border: {
+                radius: susanoo.rem-calc(4);
+            }
+            &.disabled {
+                border: {
+                    radius: unset;
+                }
+                &:hover {
+                    background: {
+                        color: variables.$anchor-disabled-background-color;
+                    }
+                }
+            }
+            &:hover {
+                background: {
+                    color: variables.$anchor-background-color;
+                }
             }
         }
     }

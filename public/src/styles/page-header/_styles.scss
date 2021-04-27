@@ -3,13 +3,25 @@
 @use '../reset-list' as list;
 
 .page-header {
-    padding: susanoo.rem-calc(16);
-    background: {
-        color: variables.$page-header-background-color;
-    }
     .navigation {
         display: flex;
         justify-content: space-between;
+        padding: susanoo.rem-calc(16);
+        background: {
+            color: variables.$page-header-background-color;
+        }
+        .search-form {
+            padding: {
+                left: susanoo.rem-calc(300);
+            }
+            position: relative;
+            &::before {
+                content: 'Here is my Logo';
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
         ul {
             display: flex;
             @include list.reset-list();
