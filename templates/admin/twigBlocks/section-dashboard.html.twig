@@ -1,0 +1,39 @@
+<section class="section dashboard">
+    <div class="box-header users-online">
+        <h2 class="h4 headline">Users Online</h2>
+        <div class="container">
+            <div class="online">
+                <span class="circle"></span>
+                <span class="amount">56</span>
+                Online
+            </div>
+            <div class="percent">
+                <div class="bar" data-circle-progression>
+                    <span class="box" data-counter-percentage></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-header new-users">
+        <h2 class="h4 headline">New Accounts</h2>
+        <div class="container">
+            <div class="accounts">
+                <span class="amount">234</span> %
+            </div>
+            <div class="percent">
+                <div class="bar" data-circle-progression>
+                    <span class="box" data-counter-percentage></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-header date">
+        <h2 class="h4 headline">Today is the</h2>
+        <div class="container">
+            <div class="accounts">
+                <span class="amount date">{{ "now"|date("d") }}</span>
+                <div>{{ "now"|date("M") }}</div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -16,10 +16,14 @@
             }
             position: relative;
             &::before {
-                content: 'Here is my Logo';
+                content: 'Susanoo';
+                font: {
+                    size: susanoo.rem-calc(30);
+                }
+                color: #7258E9;
                 position: absolute;
-                top: 0;
-                left: 0;
+                top: susanoo.rem-calc(10);
+                left: susanoo.rem-calc(30);
             }
         }
         ul {

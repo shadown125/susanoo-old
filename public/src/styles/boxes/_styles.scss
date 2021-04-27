@@ -2,6 +2,7 @@
 @use 'variables' as variables;
 
 .box-header {
+    position: relative;
     padding: susanoo.rem-calc(32);
     background: {
         color: variables.$background-color;
@@ -10,6 +11,9 @@
         radius: susanoo.rem-calc(4);
     }
     color: variables.$color;
+    box: {
+        shadow: 0 2px susanoo.rem-calc(20) rgb(0,0,0, 0.3);
+    }
     .headline {
         margin: {
             bottom: susanoo.rem-calc(20);
@@ -25,13 +29,78 @@
     .amount {
         color: variables.$amount;
         font: {
-            size: susanoo.rem-calc(24);
+            size: susanoo.rem-calc(30);
             weight: 600;
         }
     }
     .percent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
         font: {
             size: susanoo.rem-calc(16);
+        }
+        width: susanoo.rem-calc(50);
+        height: susanoo.rem-calc(50);
+        margin: {
+            left: susanoo.rem-calc(20);
+        }
+        .box {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            position: absolute;
+            top: susanoo.rem-calc(-2);
+            left: susanoo.rem-calc(2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 99.2%;
+        border: {
+            width: 2px;
+            style: solid;
+        }
+        border-bottom-left-radius: susanoo.rem-calc(4);
+        border-bottom-right-radius: susanoo.rem-calc(4);
+    }
+}
+
+.box-big {
+    padding: susanoo.rem-calc(32);
+    background: {
+        color: variables.$background-color;
+    }
+    border: {
+        radius: susanoo.rem-calc(4);
+    }
+    box: {
+        shadow: 0 2px susanoo.rem-calc(20) rgb(0,0,0, 0.3);
+    }
+    .headline {
+        color: variables.$color;
+        position: relative;
+        padding: {
+            bottom: susanoo.rem-calc(16);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            color: #8494AC;
+            border: {
+                width: 1px;
+                style: solid;
+            }
         }
     }
 }

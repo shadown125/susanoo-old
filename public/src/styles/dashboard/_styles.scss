@@ -2,23 +2,25 @@
 @use 'variables' as variables;
 
 .dashboard {
-    display: flex;
+    display: grid;
+    grid-gap: susanoo.rem-calc(30);
+
+    @include susanoo.breakpoint(large) {
+        grid-template-columns: repeat(4, 1fr);
+    }
     .users-online {
-        //test
-        margin: {
-            right: susanoo.rem-calc(30);
+        &::before {
+            border: {
+                color: #667EEA;
+            }
         }
-        min: {
-            width: susanoo.rem-calc(500);
-        }
-        // s
         .online {
             position: relative;
             padding: {
                 left: susanoo.rem-calc(20);
             }
             &::before {
-                content: "";
+                content: '';
                 height: susanoo.rem-calc(10);
                 width: susanoo.rem-calc(10);
                 position: absolute;
@@ -30,10 +32,22 @@
                 border: {
                     radius: susanoo.rem-calc(200);
                 }
+                box-shadow: susanoo.rem-calc(-10) 0 susanoo.rem-calc(60) susanoo.rem-calc(15) rgba(96,223,0, 1);
             }
         }
-        .percent {
-
+    }
+    .new-users {
+        &::before {
+            border: {
+                color: #ff6767;
+            }
+        }
+    }
+    .date {
+        &::before {
+            border: {
+                color: #66DC18;
+            }
         }
     }
 }

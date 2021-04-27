@@ -1,0 +1,8 @@
+@use '../susanoo-functions' as susanoo;
+
+.users {
+    .container {
+        width: 100%;
+        height: susanoo.rem-calc(300);
+    }
+}

@@ -6,29 +6,10 @@
             {{ include('admin/twigBlocks/main-navigation.html.twig') }}
         </div>
         <div class="content">
-            <section class="section dashboard">
-                <div class="box-header users-online">
-                    <h2 class="h4 headline">Users Online</h2>
-                    <div class="container">
-                        <div class="online">
-                            <span class="amount">56</span>
-                            Online
-                        </div>
-                        <div class="percent">
-                            <span>14</span>%
-                        </div>
-                    </div>
-                </div>
-                <div class="box-header new-users">
-                    <h2 class="h4 headline">New Accounts</h2>
-                    <div class="container">
-                        <div class="accounts">
-                            <span class="amount">234</span> %
-                        </div>
-                        <div class="percent">
-                            <span>34</span>%
-                        </div>
-                    </div>
+            {{ include('admin/twigBlocks/section-dashboard.html.twig') }}
+            <section class="section users">
+                <div class="box-big container">
+                    <h2 class="h3 headline">List of all users</h2>
                 </div>
             </section>
         </div>

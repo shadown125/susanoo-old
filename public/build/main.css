@@ -1,8 +1,10 @@
 .box-header {
+  position: relative;
   padding: 2rem;
-  background-color: white;
+  background-color: #3c4855;
   border-radius: 0.25rem;
   color: #a4a4a4;
+  box-shadow: 0 2px 1.25rem rgba(0, 0, 0, 0.3);
 }
 .box-header .headline {
   margin-bottom: 1.25rem;
@@ -13,12 +15,63 @@
   font-size: 1.25rem;
 }
 .box-header .amount {
-  color: black;
-  font-size: 1.5rem;
+  color: white;
+  font-size: 1.875rem;
   font-weight: 600;
 }
 .box-header .percent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   font-size: 1rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  margin-left: 1.25rem;
+}
+.box-header .percent .box {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: -0.125rem;
+  left: 0.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box-header::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 99.2%;
+  border-width: 2px;
+  border-style: solid;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.box-big {
+  padding: 2rem;
+  background-color: #3c4855;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 1.25rem rgba(0, 0, 0, 0.3);
+}
+.box-big .headline {
+  color: #a4a4a4;
+  position: relative;
+  padding-bottom: 1rem;
+}
+.box-big .headline::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #8494AC;
+  border-width: 1px;
+  border-style: solid;
 }
 
 .button {
@@ -79,11 +132,16 @@
 }
 
 .dashboard {
-  display: flex;
+  display: grid;
+  grid-gap: 1.875rem;
 }
-.dashboard .users-online {
-  margin-right: 1.875rem;
-  min-width: 31.25rem;
+@media only screen and (min-width: 75em) {
+  .dashboard {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.dashboard .users-online::before {
+  border-color: #667EEA;
 }
 .dashboard .users-online .online {
   position: relative;
@@ -96,8 +154,35 @@
   position: absolute;
   top: 0.3125rem;
   left: 0;
-  background-color: green;
+  background-color: #66DC18;
   border-radius: 12.5rem;
+  box-shadow: -0.625rem 0 3.75rem 0.9375rem #60df00;
+}
+.dashboard .new-users::before {
+  border-color: #ff6767;
+}
+.dashboard .date::before {
+  border-color: #66DC18;
+}
+
+@font-face {
+  font-family: "open-sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("open-sans-v18-latin-regular.woff"), url("open-sans-v18-latin-regular.woff2");
+}
+@font-face {
+  font-family: "open-sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("open-sans-v18-latin-600.woff"), url("open-sans-v18-latin-600.woff2");
+}
+@font-face {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  src: url("icomoon.woff?9xu6g5") format("woff"), url("icomoon.svg?9xu6g5#icomoon") format("svg");
 }
 html,
 * {
@@ -282,10 +367,12 @@ a.disabled:hover {
   position: relative;
 }
 .page-header .navigation .search-form::before {
-  content: "Here is my Logo";
+  content: "Susanoo";
+  font-size: 1.875rem;
+  color: #7258E9;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0.625rem;
+  left: 1.875rem;
 }
 .page-header .navigation ul {
   display: flex;
@@ -310,4 +397,9 @@ a.disabled:hover {
 .section {
   background-color: #f1f4f6;
   padding: 3.125rem;
+}
+
+.users .container {
+  width: 100%;
+  height: 18.75rem;
 }
