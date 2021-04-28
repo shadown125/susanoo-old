@@ -1,0 +1,53 @@
+@use '../susanoo-functions' as susanoo;
+
+.users-table {
+    display: block;
+    width: 100%;
+    border: {
+        collapse: collapse;
+    }
+    @include susanoo.breakpoint(large) {
+        display: table;
+    }
+    thead {
+        display: none;
+        color: #acb4be;
+        @include susanoo.breakpoint(large) {
+            display: table-header-group;
+        }
+        tr {
+            vertical-align: baseline;
+        }
+        th {
+            padding: susanoo.rem-calc(10);
+            font: {
+                weight: 600;
+            }
+        }
+    }
+    tbody {
+        display: block;
+        width: 100%;
+        @include susanoo.breakpoint(large) {
+            display: table-row-group;
+        }
+        tr {
+            vertical-align: baseline;
+            border: {
+                bottom: {
+                    width: 2px;
+                    style: solid;
+                }
+            }
+        }
+        td {
+            padding: susanoo.rem-calc(18);
+            text-align: center;
+            color: white;
+        }
+        .button {
+            display: inherit;
+            padding: susanoo.rem-calc(8) susanoo.rem-calc(36);
+        }
+    }
+}

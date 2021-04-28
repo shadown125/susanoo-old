@@ -8,7 +8,7 @@
         color: variables.$navigation-background-color;
     }
     @include susanoo.breakpoint(large) {
-        height: calc(100vh - #{susanoo.rem-calc(83)});
+        min-height: calc(100vh - #{susanoo.rem-calc(83)});
     }
 }
 

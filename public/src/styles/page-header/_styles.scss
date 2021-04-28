@@ -12,10 +12,14 @@
             color: variables.$page-header-background-color;
         }
         .search-form {
+            display: none;
             padding: {
                 left: susanoo.rem-calc(300);
             }
             position: relative;
+            @include susanoo.breakpoint(large) {
+                display: block;
+            }
             &::before {
                 content: 'Susanoo';
                 font: {
@@ -31,10 +35,16 @@
             display: flex;
             @include list.reset-list();
             margin: {
-                left: susanoo.rem-calc(20);
+                left: auto;
+            }
+            @include susanoo.breakpoint(large) {
+                margin: {
+                    left: susanoo.rem-calc(20);
+                }
             }
         }
         li {
+            position: relative;
             .button-header {
                 margin: 0 susanoo.rem-calc(16);
             }

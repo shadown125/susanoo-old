@@ -70,9 +70,9 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  color: #8494AC;
   border-width: 1px;
   border-style: solid;
+  border-color: #ff6767;
 }
 
 .button {
@@ -200,6 +200,53 @@
 }
 .dashboard .date::before {
   border-color: #66DC18;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 0;
+  left: -5.625rem;
+  display: block;
+  visibility: hidden;
+  background-color: #4C5C8A;
+  border-radius: 0.25rem;
+  transition: top 0.1s ease-in-out;
+  z-index: 2;
+  padding: 1.25rem 1rem;
+}
+.dropdown-menu.is-active {
+  top: 4.125rem;
+  visibility: visible;
+}
+.dropdown-menu a,
+.dropdown-menu button {
+  width: 100%;
+  padding: 0.625rem 1.875rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+}
+.dropdown-menu a:not(:last-child),
+.dropdown-menu button:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  background-color: #2D2C3C;
+}
+.dropdown-menu button {
+  color: white;
+  cursor: pointer;
+  background-color: transparent;
+  border-color: transparent;
+  border-style: unset;
+  border-width: unset;
+  transition: color 0.2s linear;
+}
+.dropdown-menu button:hover {
+  color: #7258E9;
+}
+.dropdown-menu div {
+  color: white;
 }
 
 @font-face {
@@ -360,7 +407,7 @@ a.disabled:hover {
 }
 @media only screen and (min-width: 75em) {
   .main-navigation-container {
-    height: calc(100vh - 5.1875rem);
+    min-height: calc(100vh - 5.1875rem);
   }
 }
 
@@ -507,8 +554,14 @@ a.disabled:hover {
   background-color: #3c4855;
 }
 .page-header .navigation .search-form {
+  display: none;
   padding-left: 18.75rem;
   position: relative;
+}
+@media only screen and (min-width: 75em) {
+  .page-header .navigation .search-form {
+    display: block;
+  }
 }
 .page-header .navigation .search-form::before {
   content: "Susanoo";
@@ -523,13 +576,21 @@ a.disabled:hover {
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-left: 1.25rem;
+  margin-left: auto;
 }
 .page-header .navigation ul li {
   margin: 0;
 }
 .page-header .navigation ul li::before {
   content: none;
+}
+@media only screen and (min-width: 75em) {
+  .page-header .navigation ul {
+    margin-left: 1.25rem;
+  }
+}
+.page-header .navigation li {
+  position: relative;
 }
 .page-header .navigation li .button-header {
   margin: 0 1rem;
@@ -646,7 +707,57 @@ a.disabled:hover {
   padding: 3.125rem;
 }
 
+.users-table {
+  display: block;
+  width: 100%;
+  border-collapse: collapse;
+}
+@media only screen and (min-width: 75em) {
+  .users-table {
+    display: table;
+  }
+}
+.users-table thead {
+  display: none;
+  color: #acb4be;
+}
+@media only screen and (min-width: 75em) {
+  .users-table thead {
+    display: table-header-group;
+  }
+}
+.users-table thead tr {
+  vertical-align: baseline;
+}
+.users-table thead th {
+  padding: 0.625rem;
+  font-weight: 600;
+}
+.users-table tbody {
+  display: block;
+  width: 100%;
+}
+@media only screen and (min-width: 75em) {
+  .users-table tbody {
+    display: table-row-group;
+  }
+}
+.users-table tbody tr {
+  vertical-align: baseline;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}
+.users-table tbody td {
+  padding: 1.125rem;
+  text-align: center;
+  color: white;
+}
+.users-table tbody .button {
+  display: inherit;
+  padding: 0.5rem 2.25rem;
+}
+
 .users .container {
   width: 100%;
-  height: 18.75rem;
+  min-height: 18.75rem;
 }

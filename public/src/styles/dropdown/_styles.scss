@@ -1,0 +1,62 @@
+@use '../susanoo-functions' as susanoo;
+
+.dropdown-menu {
+    position: absolute;
+    top: 0;
+    left: susanoo.rem-calc(-90);
+    display: block;
+    visibility: hidden;
+    background: {
+        color: #4C5C8A;
+    }
+    border: {
+        radius: susanoo.rem-calc(4);
+    }
+    transition: top 0.1s ease-in-out;
+    z-index: 2;
+    padding: susanoo.rem-calc(20) susanoo.rem-calc(16);
+    &.is-active {
+        top: susanoo.rem-calc(66);
+        visibility: visible;
+    }
+    a,
+    button {
+        width: 100%;
+        padding: susanoo.rem-calc(10) susanoo.rem-calc(30);
+        font: {
+            size: susanoo.rem-calc(16);
+        }
+        border: {
+            radius: susanoo.rem-calc(6);
+        }
+        &:not(:last-child) {
+            margin: {
+                bottom: susanoo.rem-calc(4);
+            }
+        }
+        &:hover {
+            background: {
+                color: #2D2C3C;
+            }
+        }
+    }
+    button {
+        color: white;
+        cursor: pointer;
+        background: {
+            color: transparent;
+        }
+        border: {
+            color: transparent;
+            style: unset;
+            width: unset;
+        }
+        transition: color 0.2s linear;
+        &:hover {
+            color: #7258E9;
+        }
+    }
+    div {
+        color: white;
+    }
+}

@@ -3,6 +3,8 @@
 .users {
     .container {
         width: 100%;
-        height: susanoo.rem-calc(300);
+        min: {
+            height: susanoo.rem-calc(300);
+        }
     }
 }
