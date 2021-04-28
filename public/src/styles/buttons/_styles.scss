@@ -1,5 +1,6 @@
 @use '../susanoo-functions' as susanoo;
 @use 'variables' as variables;
+@use '../icons/variables' as icon;
 
 .button {
     display: block;
@@ -56,22 +57,45 @@
     display: inline-block;
     width: susanoo.rem-calc(45);
     height: susanoo.rem-calc(45);
-    background: {
-        color: variables.$button-header-background-color;
-    }
     border: {
         radius: susanoo.rem-calc(200);
         style: none;
         width: unset;
     }
     transition: background-color 0.2s linear;
-    &:hover {
-        background: {
-            color: variables.$button-header-hover-background-color;
-        }
-    }
     &:active,
     &:focus {
         outline: none;
+    }
+    &::before {
+        @include susanoo.icon(null, true);
+        color: variables.$button-header-before-color;
+        font: {
+            size: susanoo.rem-calc(20);
+        }
+    }
+}
+
+.button-menu {
+    cursor: pointer;
+    display: inline-block;
+    background: {
+        color: transparent;
+    }
+    border: none;
+    width: susanoo.rem-calc(45);
+    height: susanoo.rem-calc(45);
+    &::before {
+        @include susanoo.icon(icon.$icon-menu);
+        font: {
+            size: susanoo.rem-calc(32);
+        }
+        color: variables.$button-menu-hover-color;
+        transition: color 0.2s ease-in-out;
+    }
+    &:hover {
+        &::before {
+            color: variables.$button-menu-before-hover-color;
+        }
     }
 }

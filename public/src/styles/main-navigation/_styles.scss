@@ -1,10 +1,14 @@
 @use '../susanoo-functions' as susanoo;
 @use '../reset-list' as list;
 @use 'variables' as variables;
+@use '../icons/variables' as icon;
 
 .main-navigation-container {
     background: {
         color: variables.$navigation-background-color;
+    }
+    @include susanoo.breakpoint(large) {
+        height: calc(100vh - #{susanoo.rem-calc(83)});
     }
 }
 
@@ -12,14 +16,52 @@
     .navigation {
         padding: {
             top: susanoo.rem-calc(16);
-            right: susanoo.rem-calc(32);
+            right: susanoo.rem-calc(16);
             bottom: susanoo.rem-calc(16);
             left: susanoo.rem-calc(16);
         }
+        @include susanoo.breakpoint(large) {
+            padding: {
+                right: susanoo.rem-calc(32);
+            }
+        }
+        .container {
+            position: relative;
+            padding: {
+                top: susanoo.rem-calc(10);
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                border: {
+                    width: 1px;
+                    style: solid;
+                    color: grey;
+                }
+            }
+            @include susanoo.breakpoint(large) {
+                padding: {
+                    top: 0;
+                }
+                &::before {
+                    content: none;
+                }
+            }
+        }
         .headline {
+            display: none;
             color: variables.$headline-color;
             margin: {
                 bottom: susanoo.rem-calc(10);
+            }
+            .is-active {
+                display: block;
+            }
+            @include susanoo.breakpoint(large) {
+                display: block;
             }
         }
         div {
@@ -31,15 +73,54 @@
             }
         }
         a {
-            padding: {
-                left: susanoo.rem-calc(32);
+            position: relative;
+            padding: susanoo.rem-calc(24);
+            margin: {
+                bottom: susanoo.rem-calc(6)
             }
             border: {
                 radius: susanoo.rem-calc(4);
             }
+            @include susanoo.breakpoint(large) {
+                padding: {
+                    top: susanoo.rem-calc(10);
+                    right: susanoo.rem-calc(10);
+                    bottom: susanoo.rem-calc(10);
+                    left: susanoo.rem-calc(46);
+                }
+            }
+            &.is-active {
+                &::before {
+                    top: susanoo.rem-calc(12);
+                    left: susanoo.rem-calc(12);
+                    transform: unset;
+                }
+            }
+            &::before {
+                @include susanoo.icon(null, true);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font: {
+                    size: susanoo.rem-calc(22);
+                }
+                @include susanoo.breakpoint(large) {
+                    top: susanoo.rem-calc(12);
+                    left: susanoo.rem-calc(12);
+                    transform: unset;
+                }
+            }
             &.disabled {
                 border: {
                     radius: unset;
+                }
+                display: none;
+                @include susanoo.breakpoint(large) {
+                    display: block;
+                }
+                &.is-active {
+                    display: block;
                 }
                 &:hover {
                     background: {
@@ -51,6 +132,25 @@
                 background: {
                     color: variables.$anchor-background-color;
                 }
+            }
+        }
+        span {
+            display: none;
+            @include susanoo.breakpoint(large) {
+                display: block;
+            }
+            &.is-active {
+                display: block;
+            }
+        }
+        .dashboard-link {
+            &::before {
+                @include susanoo.icon(icon.$icon-rocket, false);
+            }
+        }
+        .pages-link {
+            &::before {
+                @include susanoo.icon(icon.$icon-open-book, false);
             }
         }
     }

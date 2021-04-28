@@ -1,6 +1,7 @@
 @use '../susanoo-functions' as susanoo;
 @use 'variables' as variables;
 @use '../reset-list' as list;
+@use '../icons/variables' as icon;
 
 .page-header {
     .navigation {
@@ -20,7 +21,7 @@
                 font: {
                     size: susanoo.rem-calc(30);
                 }
-                color: #7258E9;
+                color: variables.$search-form-background-color;
                 position: absolute;
                 top: susanoo.rem-calc(10);
                 left: susanoo.rem-calc(30);
@@ -39,6 +40,108 @@
             }
             span {
                 display: none;
+            }
+            .button-menu {
+                padding: {
+                    left: susanoo.rem-calc(10);
+                }
+            }
+            .profile {
+                display: flex;
+                border-left: 1px solid variables.$profile-border-color;
+                border-right: 1px solid variables.$profile-border-color;
+                img {
+                    width: susanoo.rem-calc(45);
+                    height: susanoo.rem-calc(45);
+                    margin: {
+                        left: susanoo.rem-calc(10);
+                        right: susanoo.rem-calc(30);
+                    }
+                    border: {
+                        radius: susanoo.rem-calc(200);
+                    }
+                }
+                .informations {
+                    margin: {
+                        right: susanoo.rem-calc(20);
+                    }
+                    .name {
+                        color: variables.$profile-name;
+                        font: {
+                            weight: 800;
+                        }
+                    }
+                    .profession {
+                        color: variables.$profile-profession;
+                    }
+                }
+            }
+            .notification {
+                position: relative;
+                background: {
+                    color: variables.$notification-background-color;
+                }
+                &:hover {
+                    background: {
+                        color: variables.$notification-hover-background-color;
+                    }
+                }
+                &::before {
+                    @include susanoo.icon(icon.$icon-megaphone, true);
+                    color: variables.$notification-before-color;
+                }
+                &::after {
+                    content: "";
+                    width: susanoo.rem-calc(10);
+                    height: susanoo.rem-calc(10);
+                    background: {
+                        color: variables.$notification-after-background-color;
+                    }
+                    border: {
+                        radius: susanoo.rem-calc(200);
+                    }
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+            }
+            .language {
+                position: relative;
+                background: {
+                    color: variables.$language-background-color;
+                }
+                &:hover {
+                    background: {
+                        color: variables.$language-hover-background-color;
+                    }
+                }
+                &::before {
+                    @include susanoo.icon(icon.$icon-network, true);
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: variables.$language-before-color;
+                }
+            }
+            .statistic {
+                position: relative;
+                background: {
+                    color: variables.$statistic-background-color;
+                }
+                &:hover {
+                    background: {
+                        color: variables.$statistic-hover-background-color;
+                    }
+                }
+                &::before {
+                    @include susanoo.icon(icon.$icon-pie-chart, true);
+                    color: variables.$statistic-before-color;
+                    position: absolute;
+                    top: 46%;
+                    left: 52%;
+                    transform: translate(-50%, -50%);
+                }
             }
         }
     }
