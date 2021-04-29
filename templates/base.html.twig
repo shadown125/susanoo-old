@@ -48,7 +48,7 @@
                                     <img src="{{ asset('src/pics/img-2.jpg') }}" alt="Profile image">
                                 </div>
                                 <div class="informations">
-                                    <div class="name">Dawid Ol</div>
+                                    <div class="name">{{ app.user.name }} {{ app.user.lastname }}</div>
                                     <div class="profession">Fullstack Developer</div>
                                 </div>
                             </div>
@@ -58,9 +58,8 @@
                             <span>settings</span>
                             <div class="dropdown-menu" data-dropdown-menu>
                                 <a href="#">Settings</a>
-                                <form action="#" method="post">
-                                    <button type="submit">Logout</button>
-                                </form>
+                                <a href="#">Register User</a>
+                                <a href="{{ path('logout') }}">Logout</a>
                             </div>
                         </li>
                     </ul>

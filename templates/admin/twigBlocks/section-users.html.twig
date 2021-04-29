@@ -1,3 +1,4 @@
+{% if is_granted('ROLE_ADMIN') %}
 <section class="section users">
     <div class="box-big container">
         <h2 class="h3 headline">List of all users</h2>
@@ -63,3 +64,4 @@
         </div>
     </div>
 </section>
+{% endif %}
