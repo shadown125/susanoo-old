@@ -702,6 +702,24 @@ a.disabled:hover {
   transform: translate(-50%, -50%);
 }
 
+.register .form {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 1.875rem;
+}
+.register .form div {
+  display: flex;
+  grid-column: span 2;
+  flex-direction: column;
+}
+.register .form div:last-child {
+  grid-row: 3;
+  grid-column: span 1;
+}
+.register label {
+  color: white;
+}
+
 .section {
   background-color: #f1f4f6;
   padding: 3.125rem;

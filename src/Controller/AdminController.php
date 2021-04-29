@@ -15,4 +15,10 @@ class AdminController extends AbstractController
     {
         return $this->render('admin/index.html.twig');
     }
+
+    #[Route('/register', name: 'susanoo_register')]
+    public function register(): Response
+    {
+        return $this->render('admin/register.html.twig');
+    }
 }

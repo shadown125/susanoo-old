@@ -1,0 +1,23 @@
+@use '../susanoo-functions' as susanoo;
+
+.register {
+    .form {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: susanoo.rem-calc(30);
+        div {
+            display: flex;
+            grid-column: span 2;
+            flex: {
+                direction: column;
+            }
+            &:last-child {
+                grid-row: 3;
+                grid-column: span 1;
+            }
+        }
+    }
+    label {
+        color: white;
+    }
+}
