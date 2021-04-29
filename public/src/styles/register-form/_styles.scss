@@ -11,7 +11,7 @@
             flex: {
                 direction: column;
             }
-            &:last-child {
+            &.container-submit {
                 grid-row: 3;
                 grid-column: span 1;
             }

@@ -712,7 +712,7 @@ a.disabled:hover {
   grid-column: span 2;
   flex-direction: column;
 }
-.register .form div:last-child {
+.register .form div.container-submit {
   grid-row: 3;
   grid-column: span 1;
 }
