@@ -1,4 +1,5 @@
 @use '../susanoo-functions' as susanoo;
+@use 'variables' as variables;
 
 .users-table {
     display: block;
@@ -6,12 +7,12 @@
     border: {
         collapse: collapse;
     }
-    @include susanoo.breakpoint(large) {
+    @include susanoo.breakpoint(large-s) {
         display: table;
     }
     thead {
         display: none;
-        color: #acb4be;
+        color: variables.$thead-color;
         @include susanoo.breakpoint(large) {
             display: table-header-group;
         }
@@ -32,6 +33,8 @@
             display: table-row-group;
         }
         tr {
+            display: block;
+            width: 100%;
             vertical-align: baseline;
             border: {
                 bottom: {
@@ -39,15 +42,26 @@
                     style: solid;
                 }
             }
+            @include susanoo.breakpoint(large-s) {
+                display: table-row;
+            }
         }
         td {
             padding: susanoo.rem-calc(18);
             text-align: center;
-            color: white;
+            color: variables.$tr-color;
+            display: block;
+            width: 100%;
+            @include susanoo.breakpoint(large-s) {
+                display: table-cell;
+                width: unset;
+            }
+
         }
         .button {
             display: inherit;
             padding: susanoo.rem-calc(8) susanoo.rem-calc(36);
+            margin: 0 auto;
         }
     }
 }

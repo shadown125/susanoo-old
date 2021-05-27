@@ -2,12 +2,13 @@
 
 {% block main %}
     <div class="wrapper-sus-main">
-        <div class="main-navigation-container">
+        <div class="main-navigation-container" data-main-navigation-container>
             {{ include('admin/twigBlocks/main-navigation.html.twig') }}
         </div>
         <div class="content">
             {{ include('admin/twigBlocks/section-dashboard.html.twig') }}
             {{ include('admin/twigBlocks/section-users.html.twig') }}
+            {{ include('admin/twigBlocks/section-symfony-commands.html.twig') }}
         </div>
     </div>
 {% endblock %}

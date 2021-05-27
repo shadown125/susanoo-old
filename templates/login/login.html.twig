@@ -7,20 +7,20 @@
     <div class="wrapper">
         <div class="container">
             <div class="panel">
-                {% if error %}
-                    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                {% endif %}
                 <h1 class="h1 headline">Welcome to Susanoo</h1>
                 <form action="{{ path('login') }}" class="form" method="post">
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
                     <div>
                         <label for="login">Login:</label>
-                        <input type="email" name="_email" id="login" class="input" placeholder="E-mail">
+                        <input type="email" name="_email" id="login" class="input {% if error %}{{ 'invalid' }}{% endif %}" placeholder="E-mail">
                     </div>
+                    {% if error %}
+                        <div class="is-invalid">{{ "E-Mail or password are wrong." }}</div>
+                    {% endif %}
                     <div>
                         <label for="password">Password:</label>
-                        <input type="password" name="_password" id="password" class="input" placeholder="Password">
+                        <input type="password" name="_password" id="password" class="input {% if error %}{{ 'invalid' }}{% endif %}" placeholder="Password">
                     </div>
                     <button class="button" type="submit">Login</button>
                 </form>

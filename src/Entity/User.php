@@ -36,8 +36,8 @@ class User implements UserInterface
 
     /**
      * @var string The hashed password
-     * @Assert\NotBlank (message = "Please enter a valid password")
-     * @Assert\Length(max=4096)
+     * @Assert\NotBlank (message = "Please enter a valid password.")
+     * @Assert\Length(max=4096, min=6)
      * @ORM\Column(type="string")
      */
     private $password;
@@ -52,6 +52,16 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $last_name;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $profession;
+
+    /**
+     * @ORM\Column(type="datetime", length=255, nullable=true)
+     */
+    private $created_at;
 
     public function getId(): ?int
     {
@@ -107,7 +117,7 @@ class User implements UserInterface
         return (string) $this->password;
     }
 
-    public function setPassword(string $password): self
+    public function setPassword(?string $password): self
     {
         $this->password = $password;
 
@@ -154,6 +164,30 @@ class User implements UserInterface
     public function setLastName(?string $last_name): self
     {
         $this->last_name = $last_name;
+
+        return $this;
+    }
+
+    public function getProfession(): ?string
+    {
+        return $this->profession;
+    }
+
+    public function setProfession(?string $profession): self
+    {
+        $this->profession = $profession;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(?\DateTimeInterface $created_at): self
+    {
+        $this->created_at = $created_at;
 
         return $this;
     }

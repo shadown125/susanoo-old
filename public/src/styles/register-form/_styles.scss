@@ -1,4 +1,5 @@
 @use '../susanoo-functions' as susanoo;
+@use '../reset-list/styles' as list;
 
 .register {
     .form {
@@ -15,6 +16,12 @@
                 grid-row: 3;
                 grid-column: span 1;
             }
+        }
+        ul {
+            @include list.reset-list();
+        }
+        li {
+            color: #d92550;
         }
     }
     label {

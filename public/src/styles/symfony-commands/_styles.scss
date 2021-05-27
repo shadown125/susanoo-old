@@ -1,0 +1,20 @@
+@use '../susanoo-functions' as susanoo;
+
+.symfony-commands {
+    .headline-inner {
+        margin: {
+            top: susanoo.rem-calc(12);
+            bottom: susanoo.rem-calc(8);
+        }
+        color: #a4a4a4;
+        border: {
+            bottom: unset;
+        }
+    }
+    div {
+        color: white;
+        margin: {
+            bottom: susanoo.rem-calc(6);
+        }
+    }
+}

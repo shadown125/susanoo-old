@@ -21,6 +21,20 @@
         background: {
             color: variables.$panel-background-color;
         }
+        .invalid {
+            color: variables.$invalid-color;
+            border: {
+                color: variables.$invalid-color;
+                width: 2px;
+                style: solid;
+            }
+        }
+        .is-invalid {
+            color: variables.$invalid-color;
+            margin: {
+                top: susanoo.rem-calc(-10);
+            }
+        }
         .headline {
             color: variables.$title-color;
             padding: {

@@ -17,11 +17,13 @@ export default class Application {
 
     #initShowAndHideEvents() {
         const buttonMenus = document.querySelectorAll('[data-button-menu]');
+        const navigationButton = document.querySelector('[data-main-navigation-button]');
+        const headNavigationButton = document.querySelectorAll('[data-head-navigation-button]');
 
         buttonMenus.forEach((buttonMenu) => {
             const dropdownMenu = buttonMenu.nextElementSibling.nextElementSibling;
 
-            new ShowAndHideEvents(buttonMenu, dropdownMenu);
+            new ShowAndHideEvents(buttonMenu, dropdownMenu, navigationButton, headNavigationButton);
         })
     }
 }

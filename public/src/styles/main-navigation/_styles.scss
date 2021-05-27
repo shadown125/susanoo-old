@@ -7,6 +7,46 @@
     background: {
         color: variables.$navigation-background-color;
     }
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: calc(100vh - #{susanoo.rem-calc(83)});
+    z-index: 2;
+    &.is-active {
+        visibility: visible;
+        .navigation {
+            .headline {
+                display: block;
+            }
+            a {
+                padding: {
+                    top: susanoo.rem-calc(10);
+                    right: susanoo.rem-calc(10);
+                    bottom: susanoo.rem-calc(10);
+                    left: susanoo.rem-calc(46);
+                }
+                &::before {
+                    top: susanoo.rem-calc(12);
+                    left: susanoo.rem-calc(12);
+                    transform: unset;
+                }
+                &.disabled {
+                    display: block;
+                }
+            }
+            span {
+                display: block;
+            }
+        }
+    }
+    @include susanoo.breakpoint(medium) {
+        visibility: visible;
+        position: unset;
+        min: {
+            height: unset;
+        }
+    }
     @include susanoo.breakpoint(large) {
         min-height: calc(100vh - #{susanoo.rem-calc(83)});
     }
@@ -57,9 +97,6 @@
             margin: {
                 bottom: susanoo.rem-calc(10);
             }
-            .is-active {
-                display: block;
-            }
             @include susanoo.breakpoint(large) {
                 display: block;
             }
@@ -89,13 +126,6 @@
                     left: susanoo.rem-calc(46);
                 }
             }
-            &.is-active {
-                &::before {
-                    top: susanoo.rem-calc(12);
-                    left: susanoo.rem-calc(12);
-                    transform: unset;
-                }
-            }
             &::before {
                 @include susanoo.icon(null, true);
                 position: absolute;
@@ -119,9 +149,6 @@
                 @include susanoo.breakpoint(large) {
                     display: block;
                 }
-                &.is-active {
-                    display: block;
-                }
                 &:hover {
                     background: {
                         color: variables.$anchor-disabled-background-color;
@@ -137,9 +164,6 @@
         span {
             display: none;
             @include susanoo.breakpoint(large) {
-                display: block;
-            }
-            &.is-active {
                 display: block;
             }
         }

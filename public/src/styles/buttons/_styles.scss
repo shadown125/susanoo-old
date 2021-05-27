@@ -99,3 +99,30 @@
         }
     }
 }
+
+.button-rectangle {
+    background: {
+        color: #667EEA;
+    }
+    border: {
+        style: none;
+    }
+    cursor: pointer;
+    width: susanoo.rem-calc(26);
+    height: susanoo.rem-calc(36);
+    border: {
+        radius: susanoo.rem-calc(4);
+    }
+    transition: background-color 0.2s ease-in-out;
+    &:hover {
+        background: {
+            color: #4f6ce8;
+        }
+    }
+    &::before {
+        color: white;
+        font: {
+            size: susanoo.rem-calc(20);
+        }
+    }
+}

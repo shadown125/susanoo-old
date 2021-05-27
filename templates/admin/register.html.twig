@@ -2,7 +2,7 @@
 
 {% block main %}
     <div class="wrapper-sus-main">
-        <div class="main-navigation-container">
+        <div class="main-navigation-container" data-main-navigation-container>
             {{ include('admin/twigBlocks/main-navigation.html.twig') }}
         </div>
         <div class="content">
@@ -11,7 +11,11 @@
                     {{ form_start(form, {'attr': {'novalidate':'novalidate', 'class':'form'}}) }}
                         <div>
                             <label for="user_name">Name:</label>
-                            {{ form_widget(form.name, { 'attr': {'class': 'input'} }) }}
+                            {% if form.name.vars.errors|length %}
+                                {{ form_widget(form.name, { 'attr': {'class': 'input is-invalid'} }) }}
+                            {% else %}
+                                {{ form_widget(form.name, { 'attr': {'class': 'input'} }) }}
+                            {% endif %}
                             <div>
                                 {{ form_errors(form.name) }}
                             </div>
@@ -25,14 +29,29 @@
                         </div>
                         <div>
                             <label for="user_email">E-mail:</label>
-                            {{ form_widget(form.email, { 'attr': {'class': 'input'} }) }}
+                            {% if form.email.vars.errors|length %}
+                                {{ form_widget(form.email, { 'attr': {'class': 'input is-invalid'} }) }}
+                            {% else %}
+                                {{ form_widget(form.email, { 'attr': {'class': 'input'} }) }}
+                            {% endif %}
                             <div>
                                 {{ form_errors(form.email) }}
                             </div>
                         </div>
                         <div>
+                            <label for="user_profession">Profession:</label>
+                            {{ form_widget(form.profession, { 'attr': {'class': 'input'} }) }}
+                            <div>
+                                {{ form_errors(form.profession) }}
+                            </div>
+                        </div>
+                        <div>
                             <label for="user_password_first">Password:</label>
-                            {{ form_widget(form.password.first, { 'attr': {'class': 'input'} }) }}
+                            {% if form.password.first.vars.errors|length %}
+                                {{ form_widget(form.password.first, { 'attr': {'class': 'input is-invalid'} }) }}
+                            {% else %}
+                                {{ form_widget(form.password.first, { 'attr': {'class': 'input'} }) }}
+                            {% endif %}
                             <div>
                                 {{ form_errors(form.password.first) }}
                             </div>

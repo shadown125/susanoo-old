@@ -17,7 +17,12 @@ class AdminController extends AbstractController
     #[Route('/', name: 'susanoo_dashboard')]
     public function index(): Response
     {
-        return $this->render('admin/index.html.twig');
+
+        $users = $this->getDoctrine()->getRepository(User::class)->findAll();
+
+        return $this->render('admin/index.html.twig', [
+            'users' => $users
+        ]);
     }
 
     #[Route('/register', name: 'susanoo_register')]
@@ -37,6 +42,7 @@ class AdminController extends AbstractController
             $password = $passwordEncoder->encodePassword($user, $request->request->get('user')['password']['first']);
             $user->setPassword($password);
             $user->setRoles(['ROLE_USER']);
+            $user->setCreatedAt(new \DateTime());
 
             $entityManager->persist($user);
             $entityManager->flush();

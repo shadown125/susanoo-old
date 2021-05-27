@@ -24,45 +24,53 @@
     {% block header %}
         <header class="page-header">
             <div class="wrapper-sus">
-                <nav class="navigation">
-                    <form class="search-form">
-                        <label for="search"></label>
-                        <input type="search" class="input" id="search">
-                    </form>
-                    <ul>
-                        <li>
-                            <button class="button-header notification"></button>
-                            <span>notifications</span>
-                        </li>
-                        <li>
-                            <button class="button-header language"></button>
-                            <span>language</span>
-                        </li>
-                        <li>
-                            <button class="button-header statistic"></button>
-                            <span>user activity</span>
-                        </li>
-                        <li>
-                            <div class="profile">
-                                <div>
-                                    <img src="{{ asset('src/pics/img-2.jpg') }}" alt="Profile image">
+                <nav class="navigation" data-head-navigation>
+                    <button class="button-menu button-navigation" data-main-navigation-button></button>
+                    <div class="left-side">
+                        <h1 class="h1 headline">Susanoo</h1>
+                        <form class="search-form">
+                            <label for="search"></label>
+                            <input type="search" class="input" id="search" placeholder="Type for Search">
+                            <button class="button-header"></button>
+                        </form>
+                    </div>
+                    <div class="options">
+                        <button class="button-rectangle" data-head-navigation-button></button>
+                        <ul>
+                            <li>
+                                <button class="button-header notification"></button>
+                                <span>notifications</span>
+                            </li>
+                            <li>
+                                <button class="button-header language"></button>
+                                <span>language</span>
+                            </li>
+                            <li>
+                                <button class="button-header statistic"></button>
+                                <span>user activity</span>
+                            </li>
+                            <li>
+                                <div class="profile">
+                                    <div>
+                                        <img src="{{ asset('src/pics/img-2.jpg') }}" alt="Profile image">
+                                    </div>
+                                    <div class="informations">
+                                        <div class="name">{{ app.user.name }} {{ app.user.lastname }}</div>
+                                        <div class="profession">{{ app.user.profession }}</div>
+                                    </div>
                                 </div>
-                                <div class="informations">
-                                    <div class="name">{{ app.user.name }} {{ app.user.lastname }}</div>
-                                    <div class="profession">Fullstack Developer</div>
+                            </li>
+                            <li>
+                                <button class="button-menu" data-button-menu></button>
+                                <span>settings</span>
+                                <div class="dropdown-menu" data-dropdown-menu>
+                                    <a href="#">Settings</a>
+                                    <a href="{{ path('susanoo_register') }}">Register User</a>
+                                    <a href="{{ path('logout') }}">Logout</a>
                                 </div>
-                            </div>
-                        </li>
-                        <li>
-                            <button class="button-menu" data-button-menu></button>
-                            <span>settings</span>
-                            <div class="dropdown-menu" data-dropdown-menu>
-                                <a href="#">Settings</a>
-                                <a href="{{ path('susanoo_register') }}">Register User</a>
-                                <a href="{{ path('logout') }}">Logout</a>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </nav>
             </div>
         </header>

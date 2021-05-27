@@ -4,7 +4,9 @@
 .dashboard {
     display: grid;
     grid-gap: susanoo.rem-calc(30);
-
+    @include susanoo.breakpoint(medium) {
+        grid-template-columns: repeat(2, 1fr);
+    }
     @include susanoo.breakpoint(large) {
         grid-template-columns: repeat(4, 1fr);
     }

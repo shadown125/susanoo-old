@@ -19,8 +19,7 @@
         top: susanoo.rem-calc(66);
         visibility: visible;
     }
-    a,
-    button {
+    a {
         width: 100%;
         padding: susanoo.rem-calc(10) susanoo.rem-calc(30);
         font: {
@@ -38,22 +37,6 @@
             background: {
                 color: #2D2C3C;
             }
-        }
-    }
-    button {
-        color: white;
-        cursor: pointer;
-        background: {
-            color: transparent;
-        }
-        border: {
-            color: transparent;
-            style: unset;
-            width: unset;
-        }
-        transition: color 0.2s linear;
-        &:hover {
-            color: #7258E9;
         }
     }
     div {

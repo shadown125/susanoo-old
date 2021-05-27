@@ -13,7 +13,7 @@
         color: unset;
         style: none;
         width: unset;
-        radius: susanoo.rem-calc(6);
+        radius: susanoo.rem-calc(200);
     }
     padding: susanoo.rem-calc(7) susanoo.rem-calc(20);
     transition: background-color 0.2s ease-in-out;
@@ -28,5 +28,12 @@
     }
     &:focus::placeholder {
         color: transparent;
+    }
+    &.is-invalid {
+        border: {
+            style: solid;
+            width: 2px;
+            color: #d60f0f;
+        }
     }
 }

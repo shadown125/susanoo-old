@@ -5,39 +5,123 @@
 
 .page-header {
     .navigation {
+        position: relative;
         display: flex;
         justify-content: space-between;
         padding: susanoo.rem-calc(16);
         background: {
             color: variables.$page-header-background-color;
         }
+        &.is-active {
+            ul {
+                visibility: visible;
+                display: flex;
+                top: susanoo.rem-calc(90);
+                justify: {
+                    content: center;
+                }
+                align: {
+                    items: center;
+                }
+                padding: susanoo.rem-calc(10) susanoo.rem-calc(16);
+                z-index: 2;
+                background: {
+                    color: #8494AC;
+                }
+                border: {
+                    radius: susanoo.rem-calc(200);
+                }
+                box: {
+                    shadow: 0 2px susanoo.rem-calc(20) rgb(0,0,0, 0.3);
+                }
+                transform: translateX(50%);
+                .profile {
+                    border: {
+                        right: unset;
+                    }
+                    img {
+                        margin: {
+                            right: 0;
+                        }
+                    }
+                }
+                .informations {
+                    display: none;
+                }
+            }
+        }
+        .left-side {
+            display: flex;
+        }
+        .headline {
+            font: {
+                size: susanoo.rem-calc(30);
+            }
+            margin: {
+                top: susanoo.rem-calc(10);
+            }
+            color: variables.$search-form-background-color;
+        }
         .search-form {
             display: none;
-            padding: {
-                left: susanoo.rem-calc(300);
+            margin: {
+                left: susanoo.rem-calc(150);
             }
             position: relative;
             @include susanoo.breakpoint(large) {
                 display: block;
             }
-            &::before {
-                content: 'Susanoo';
-                font: {
-                    size: susanoo.rem-calc(30);
-                }
-                color: variables.$search-form-background-color;
+            button {
                 position: absolute;
-                top: susanoo.rem-calc(10);
-                left: susanoo.rem-calc(30);
+                top: 0;
+                left: 0;
+                &::before {
+                    @include susanoo.icon(icon.$icon-search);
+                    position: absolute;
+                    top: susanoo.rem-calc(10);
+                    left: susanoo.rem-calc(10);
+                    transform: rotate(90deg);
+                    color: #667EEA;
+                    font: {
+                        size: susanoo.rem-calc(24);
+                    }
+                }
+            }
+            input {
+                display: none;
+            }
+        }
+        .button-navigation {
+            @include susanoo.breakpoint(large) {
+                display: none;
+            }
+        }
+        .button-rectangle {
+            position: relative;
+            &::before {
+                @include susanoo.icon(icon.$icon-dots-three-vertical);
+                position: absolute;
+                top: susanoo.rem-calc(8);
+                left: susanoo.rem-calc(3);
+            }
+            @include susanoo.breakpoint(large) {
+                display: none;
             }
         }
         ul {
-            display: flex;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            right: 50%;
             @include list.reset-list();
             margin: {
                 left: auto;
             }
+            transition: top 0.2s ease-in-out;
             @include susanoo.breakpoint(large) {
+                visibility: visible;
+                display: flex;
+                position: unset;
                 margin: {
                     left: susanoo.rem-calc(20);
                 }
