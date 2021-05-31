@@ -14,11 +14,11 @@
 
     <title>{% block title %}Susanoo{% endblock %}</title>
 
-    <link rel="stylesheet" href="{{ asset('build/main.css') }}">
+    <link rel="stylesheet" href="{% if(asset('build/main.css') is same as "/susanoo/public/build/main.css") %}{{ asset('build/main.css') }}{% else %}{{ asset('build/susanoo/main.css') }}{% endif %}">
 
-    <script src="{{ asset('build/runtime.js') }}" defer></script>
-    <script src="{{ asset('build/vendor.js') }}" defer></script>
-    <script src="{{ asset('build/main.js') }}" defer></script>
+    <script src="{% if(asset('build/runtime.js') is same as "/susanoo/public/build/runtime.js") %}{{ asset('build/runtime.js') }}{% else %}{{ asset('build/susanoo/runtime.js') }}{% endif %}" defer></script>
+    <script src="{% if(asset('build/vendor.js') is same as "/susanoo/public/build/vendor.js") %}{{ asset('build/vendor.js') }}{% else %}{{ asset('build/susanoo/vendor.js') }}{% endif %}" defer></script>
+    <script src="{% if(asset('build/main.js') is same as "/susanoo/public/build/main.js") %}{{ asset('build/main.js') }}{% else %}{{ asset('build/susanoo/main.js') }}{% endif %}" defer></script>
 </head>
 <body>
     {% block header %}

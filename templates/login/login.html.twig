@@ -10,7 +10,6 @@
                 <h1 class="h1 headline">Welcome to Susanoo</h1>
                 <form action="{{ path('login') }}" class="form" method="post">
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
                     <div>
                         <label for="login">Login:</label>
                         <input type="email" name="_email" id="login" class="input {% if error %}{{ 'invalid' }}{% endif %}" placeholder="E-mail">
