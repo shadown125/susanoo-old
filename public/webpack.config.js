@@ -1,6 +1,5 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
-const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
 
 module.exports = (env, argv) => {
     let mode = 'development';
@@ -9,12 +8,6 @@ module.exports = (env, argv) => {
 
     if (!argv.watch) {
         mode = 'production';
-
-        plugins.push(new BundleAnalyzerPlugin({
-            analyzerMode: 'static',
-            reportFilename: 'webpack-report.html',
-            openAnalyzer: false
-        }));
     }
 
     return {
@@ -25,7 +18,7 @@ module.exports = (env, argv) => {
         },
         output: {
             path: path.resolve(__dirname, './build/'),
-            publicPath: '/project/frontend/'
+            publicPath: '/public/'
         },
         optimization: {
             splitChunks: {

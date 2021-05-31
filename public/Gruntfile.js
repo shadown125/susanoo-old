@@ -34,7 +34,6 @@ module.exports = function (grunt) {
                 },
                 src: [
                     'build/main.css',
-                    'build/ckeditor.css',
                     'build/main.js'
                 ]
             }
